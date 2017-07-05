@@ -1,0 +1,10 @@
+import java.util.Arrays;
+import java.util.List;
+
+public class permutation {
+
+    public static void main(String[] args) {
+
+    	System.out.println("hello");
+    }
+}

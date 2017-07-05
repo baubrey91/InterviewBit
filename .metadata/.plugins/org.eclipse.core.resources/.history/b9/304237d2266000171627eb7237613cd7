@@ -1,0 +1,43 @@
+package kthSmallest;
+
+import java.util.*;
+
+public class kthSmallest {
+	
+    public int kthsmallest(final List<Integer> a, int k) {
+        if(a == null || a.size() == 0)
+             return -1;
+        int min = Collections.min(a);
+        int max = Collections.max(a);
+
+        while(min <= max) {
+            int mid = min + (max - min)/2;
+            int countLess = 0, countEqual = 0;
+
+            for(int i = 0; i < a.size(); i++) {
+                if(a.get(i) < mid) {
+                    countLess++;
+                }else if(a.get(i) == mid) {
+                    countEqual++;
+                }
+                if(countLess >= k) break;
+            }
+
+            if(countLess < k && countLess + countEqual >= k){
+                return mid;
+            }else if(countLess >= k) {
+                max = mid - 1;
+            }else{
+                min = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+    
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World");
+    }
+    
+}
