@@ -1,0 +1,13 @@
+
+public class palindrome {
+	
+	public static void main(String[] args) {
+		System.out.println(checkPalindrome("hello"));
+	}
+	
+	public static Boolean checkPalindrome(String myString) {
+		int mid = myString.length() / 2;
+		System.out.println(mid);
+		return false;
+	}
+}
