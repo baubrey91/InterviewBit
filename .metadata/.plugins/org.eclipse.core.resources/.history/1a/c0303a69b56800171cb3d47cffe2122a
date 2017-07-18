@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class wave {
+	public static int isNumber(final String a) {
+		String s = a.trim();
+		System.out.println(s);
+		if (s == "" || s == null)
+		{
+			return 0;
+		}
+	    int length = s.length();
+	    int decimalCount = 0;		
+	    if (s.charAt(length - 1) == '.') 
+	    {
+	        return 0;    
+	    }
+	    for (int i = 0; i < length; i++)
+	    {
+	    	/*if (a.charAt(i) == ' ')
+	    	{
+	    		return 0;
+	    	}*/
+	    	if (s.charAt(i) != '.' && s.charAt(i) != '0' && s.charAt(i) != '1' && s.charAt(i) != '2' && s.charAt(i) != '3' && s.charAt(i) != '4' && s.charAt(i) != '5' && s.charAt(i) != '6' && s.charAt(i) != '7' && s.charAt(i) != '8' && s.charAt(i) != '9') 
+	    	{
+	    		return 0;
+	    	}
+	    	
+	    	if (s.charAt(i) == '.') 
+	    	{
+	    		decimalCount++;
+	    	}
+	    }
+	    if (decimalCount > 1) 
+	    {
+    		
+	    	return 0;
+	    }
+	    return 1;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(isNumber("   "));
+	}
+}

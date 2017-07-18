@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class wave {
+	  public ArrayList<Integer> wave(ArrayList<Integer> a) {
+		    Collections.sort(a);
+		    if(a.size() == 0 || a.size() == 1)
+		        return a;
+		    int temp = -1;
+		    for(int i = 1; i < a.size(); i++) {
+		        if(i%2 == 0 && a.get(i) < a.get(i-1)) {
+		            temp = a.get(i);
+		            a.set(i, a.get(i-1));
+		            a.set(i-1, temp);
+		        }
+		        if(i%2 == 1 && a.get(i) > a.get(i-1)) {
+		            temp = a.get(i);
+		            a.set(i, a.get(i-1));
+		            a.set(i-1, temp);
+		        }
+		    }
+		    return a;
+		  }
+}
