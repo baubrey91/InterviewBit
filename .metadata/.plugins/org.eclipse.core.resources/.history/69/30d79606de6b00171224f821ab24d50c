@@ -1,0 +1,25 @@
+
+public class lengthLastWord {
+
+	public static int lengthOfLastWord(final String a) {
+	    
+	    if (a == null || a.trim() == null) {
+	        return 0;
+	    }
+	    int length = a.length();
+	    int count = 0;
+	    int i = 0;
+	    	while (a.charAt(length - 1 - i) != ' ') {
+		    	System.out.println(a.charAt(length - 1 - i));
+
+	    		count++;
+	    		i++;
+	    	}
+	    
+	    return count;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(lengthOfLastWord("I am a lion"));
+	}
+}

@@ -1,0 +1,24 @@
+
+public class lengthLastWord {
+
+	public static int lengthOfLastWord(final String a) {
+	    String b = a.trim();
+	    if (b == null) {
+	        return 0;
+	    }
+	    
+	    int length = b.length();
+	    int count = 0;
+	    int i = 0;
+	    while (i < length && b.charAt(length - 1 - i) != ' ') {
+		    System.out.println(b.charAt(length - 1 - i));
+	    	count++;
+	    	i++;
+	    }
+	    return count;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(lengthOfLastWord("hello world "));
+	}
+}
